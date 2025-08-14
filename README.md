@@ -1,6 +1,12 @@
 <h2 align=center > Módulo 5</h2>
 <h1 align=center > Programación Avanzada en JavaScript</h1>
 
+<p align="center"> 
+  <a href="#actividad1">Actividad 1</a> | 
+	<a href="#actividad2">Actividad 2</a> | 
+	<a href="#actividad3">Actividad 3</a> 
+</p>
+
  [Actividad 1](#actividad1) | [Actividad 2](#actividad2) | [Actividad 3](#actividad3) 
 
 -----
