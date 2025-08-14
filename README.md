@@ -1,30 +1,40 @@
 <h2 align=center > Módulo 5</h2>
 <h1 align=center > Programación Avanzada en JavaScript</h1>
 
-## Actividad 1: Orientación a Objetos en JavaScript
+ [Actividad 1](#actividad1) | [Actividad 2](#actividad2) | [Actividad 3](#actividad3) 
+
+-----
+
+<a name="actividad1">
+
+## Actividad Práctica 1: Orientación a Objetos en JavaScript</a>
 
 **Aprendizaje Esperado:** Utilizar los conceptos fundamentales de la programación orientada a objetos acorde al lenguaje Javascript para resolver un problema simple.
 
-**Problema:** Un consultorio médico requiere un programa realizado en JavaScript, que permita almacenar y/o modificar los datos de sus pacientes, así como filtrar y mostrar los datos de los pacientes por nombre para realizar una búsqueda más rápida y ubicar la historia médica de cada persona. 
+**Problema:** Desarrollar un sistema en JavaScript ES5 para gestionar los datos de pacientes en un consultorio médico. El sistema debe mostrar inicialmente todos los pacientes registrados y luego permitir filtrarlos mediante un método de búsqueda por nombre, cumpliendo con los principios de encapsulamiento mediante el uso de getters y setters.
 
-En el siguiente diagrama UML se puede observar cual es la cardinalidad de los objetos y las propiedades que tiene cada uno.
+### ✔️ El programa debe permitir:
 
-|Consultorio|Paciente|
-|-----------|--------|
-|nombre | nombre|
-|paciente | edad |
-| | rut |
-| | diagnóstico |
+1. **Almacenamiento y gestión** de información de pacientes (nombre, edad, rut y diagnóstico)
+2. **Búsqueda** de pacientes por nombre.
+3. **Protección de datos** mediante `getters` y `setters` para evitar modificaciones diretas.
+4. **Visualización** de todos los pacientes y resultados de búsqueda en la consola del navegador.
 
-Inicialmente, se deben mostrar todos los pacientes con sus datos personales, para luego, mediante un método de búsqueda, mostrar los datos del paciente que concuerden con el nombre que se envíe al método como argumento. Igualmente se deben proteger los datos y evitar modificaciones directas, por lo que se debe implementar getters y setters. Todo esto se deberá mostrar en la consola del navegador web de tu
-preferencia
-
-### Requerimientos:
+### ⚒️ Requisitos técnicos:
 1. Crear el código usando ES5
-2. Crear un método mediante la propiedad prototype que permita buscar los datos de los usuarios por nombre y otro método que permita mostrar todos los datos de los usuarios registrados.
+2. Crear un método mediante la propiedad `prototype` que permita buscar los datos de los usuarios por nombre y otro método que permita mostrar todos los datos de los usuarios registrados.
 3. Crear una función constructora para cada objeto.
-4. Implementar métodos getters y setters para poder acceder y modificar los datos de los pacientes
-5. Instanciar cada objeto utilizando la instrucción new.
+4. Implementar métodos `getters` y `setters` para poder acceder y modificar los datos de los pacientes
+5. Instanciar cada objeto utilizando la instrucción `new`.
+
+<a name="actividad2">
+
+## Actividad 2: </a>
+
+
+<a name="actividad3">
+
+## Actividad 3: </a>
 
 ----
 
