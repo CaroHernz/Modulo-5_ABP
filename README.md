@@ -32,7 +32,7 @@
 5. Instanciar cada objeto utilizando la instrucción `new`.
 
 <p align="center"> 
-  <a href="https://carohernz.github.io/Modulo-5_ABP/ABP1.html">Ver Actividad Práctica 1</a> | 
+  <a href="https://carohernz.github.io/Modulo-5_ABP/ABP1.html">Ver Actividad Práctica 1</a>
 </p>
 
 ----
