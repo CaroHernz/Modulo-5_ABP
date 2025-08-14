@@ -1,0 +1,35 @@
+:root {
+    --bs-primary: #ce2f21; 
+    --bs-primary-rgb: 206, 47,33; 
+  }
+
+.border-custom {
+  border-left: 5px solid #777777;
+  border-right: 0px;
+  border-top: 0px;
+  border-bottom: 0px;
+}
+.border-custom:hover {
+  transform: translateY(-3px);
+  transition: all 0.3s ease;
+}
+.imagen_card {
+    height: 250px;
+    width: 250px;
+    object-fit: contain;
+}
+.hover-custom:hover {
+  color: #ce2f21;
+}
+
+.active-custom.active {
+  color: #ce2f21 !important;
+}
+.sociales a:hover {
+  color: #777777 !important;
+  transition: all 0.5s ease;
+}
+.form-control:focus, .form-select:focus {
+  border: 1px dotted var(--bs-primary);
+  box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
+}
