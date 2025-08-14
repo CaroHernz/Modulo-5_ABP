@@ -31,6 +31,10 @@
 4. Implementar métodos `getters` y `setters` para poder acceder y modificar los datos de los pacientes
 5. Instanciar cada objeto utilizando la instrucción `new`.
 
+<p align="center"> 
+  <a href="https://carohernz.github.io/Modulo-5_ABP/ABP1.html">Ver Actividad Práctica 1</a> | 
+</p>
+
 ----
 
 <a name="actividad2">
