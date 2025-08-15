@@ -39,8 +39,56 @@
 
 <a name="actividad2">
 
-## Actividad 2: </a>
+## Actividad 2: Características JavaScript ES6</a>
 
+**Aprendizaje Esperado:** Utilizar las nuevas funcionalidades de la especificación ES6+ para la implementación de un algoritmo Javascript que resuelve un problema planteado.
+
+**Problema:** La empresa ***Express Go*** es un servicio de reparto que tiene un sistema de gestión de rutas que presenta las siguientes deficiencias:
+
+* Direcciones duplicadas en las listas de entrega
+* Falta de priorización de rutas con más paquetes
+* Reportes confusos para los repartidores
+* Compatibilidad limitada: no funciona correctamente en navegadores antiguos
+
+#### 🎯 Objetivo del Proyecto:
+Desarrollar un algoritmo en **JavaScript ES6** que:
+
+  * Procese listas de entregas, eliminando duplicados y consolidando paquetes
+  * Priorice rutas con mayor cantidad de paquetes
+  * Genere reportes legibles
+  * Sea compatible con navegadores antiguos usando **Webpack + Babel**
+
+#### ⚒️ Requisitos Funcionales:
+
+1. **Procesamiento de datos:**
+  * Eliminar direcciones duplicadas
+  * Sumar paquetes por dirección
+2. **Priorización:** Ordenar direcciones de mayor a menor cantidad de paquetes
+3. **Reporte:** Generar un resumen claro usando *template literals*
+
+#### ⚒️ Requisitos Técnicos:
+1. **ES6** (mínimo 8 características)
+2. **Webpack** para empaquetar módulos
+3. **Babel** para transpilar código a ES5 para compatibilidad
+
+#### 📦 Datos iniciales del proyecto:
+
+````
+const entregas = [
+  { direccion: "Av. Siempre Viva 742", paquetes: 4 },
+  { direccion: "Calle Falsa 123", paquetes: 2 },
+  { direccion: "Av. Siempre Viva 742", paquetes: 3 },  // Duplicado
+  { direccion: "Pje. Las Rosas 456", paquetes: 5 },
+  { direccion: "Calle Falsa 123", paquetes: 1 }        // Duplicado
+];
+````
+
+
+<p align="center"> 
+  <a href="https://carohernz.github.io/Modulo-5_ABP/ABP2.html">Ver Actividad Práctica 2</a>
+</p>
+
+----
 
 <a name="actividad3">
 
