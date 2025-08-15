@@ -8,7 +8,7 @@
   <title>Módulo 5 | Índice de Actividades Prácticas</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="icon" href="" type="image/svg+xml">
+  <link rel="icon" href="assets/img/js-icon.png" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
@@ -33,7 +33,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link hover-custom" href="#">
+              <a class="nav-link hover-custom" href="ABP2.html">
                 <i class="fas fa-book-open me-1"></i>ABP 2
               </a>
             </li>
@@ -108,11 +108,53 @@
             </div>
             <div class="abp2 collapse text-start" id="abp2" data-bs-parent="#accordion" aria-labelledby="abp2">
               <h3 class="text-start">Actividad Práctica 2</h3>
-              <p class="text-justify">
+              <p class="text-justify">La empresa <strong><em>Express Go</em></strong> es un servicio de reparto que tiene un sistema de gestión de rutas que presenta las siguientes deficiencias:
               </p>
-              <p class="fw-light">
-                <span class="fw-bold">Aprendizaje Esperado: </span>
-              </p>
+              <ul>
+                <li>Direcciones duplicadas en las listas de entrega</li>
+                <li>Falta de priorización de rutas con más paquetes</li>
+                <li>Reportes confusos para los repartidores</li>
+                <li>Compatibilidad limitada: no funciona correctamente en navegadores antiguos</li>
+              </ul>
+              <p>🎯 Objetivo del Proyecto:</p>
+              <p>Desarrollar un algoritmo en <strong>JavaScript ES6</strong> que:</p>
+              <ul>
+                <li>Procese listas de entregas, eliminando duplicados y consolidando paquetes</li>
+                <li>Priorice rutas con mayor cantidad de paquetes</li>
+                <li>Genere reportes legibles</li>
+                <li>Sea compatible con navegadores antiguos usando <strong>Webpack + Babel</strong></li>
+              </ul>
+              <p>⚒️ Requisitos Funcionales:</p>
+              <ol>
+                <li><strong>Procesamiento de datos:</strong>
+                  <ul>
+                    <li>Eliminar direcciones duplicadas</li>
+                    <li>Sumar paquetes por dirección</li>
+                  </ul>
+                </li>
+                <li><strong>Priorización: </strong>Ordenar direcciones de mayor a menor cantidad de paquetes</li>
+                <li><strong>Reporte: </strong> Generar un resumen claro usando <em>template literals</em></li>
+              </ol>
+              <p>⚒️ Requisitos Técnicos:</p>
+              <ol>
+                <li><strong>ES6</strong> (mínimo 8 características)</li>
+                <li><strong>Webpack</strong> para empaquetar módulos</li>
+                <li><strong>Babel</strong> para transpilar código a ES5 para compatibilidad</li>
+              </ol>
+              <p>📦 Datos iniciales del proyecto:</p>
+              <pre class="bg-light">
+                <code>
+  const entregas = [
+  { direccion: "Av. Siempre Viva 742", paquetes: 4 },
+  { direccion: "Calle Falsa 123", paquetes: 2 },
+  { direccion: "Av. Siempre Viva 742", paquetes: 3 }, // Duplicado
+  { direccion: "Pje. Las Rosas 456", paquetes: 5 },
+  { direccion: "Calle Falsa 123", paquetes: 1 }       // Duplicado
+  ];</code>
+              </pre>
+
+
+              
               <div class="text-center">
                 <a href="ABP2.html">
                   <button class="btn btn-danger shadow-sm">Ir a Actividad 2</button>
