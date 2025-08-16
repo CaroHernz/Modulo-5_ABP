@@ -33,3 +33,77 @@
   border: 1px dotted var(--bs-primary);
   box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
 }
+
+/* Estilos para la línea de tiempo */
+.bsb-timeline-2 {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.timeline {
+  list-style: none;
+  padding: 0;
+  position: relative;
+}
+
+.timeline:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #dee2e6;
+  left: 25px;
+  margin-left: 0;
+}
+
+.timeline-item {
+  margin-bottom: 2rem;
+  position: relative;
+  padding-left: 3rem;
+}
+
+.timeline-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #0d6efd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top:0;
+  z-index: 2;
+}
+
+.timeline-body {
+  width: 100%;
+  padding-left: 1.5rem;
+}
+
+.timeline-content {
+  padding: 0;
+}
+
+.bg-info {
+  background-color: #0d6efd !important;
+}
+
+.bg-danger {
+  background-color: #dc3545 !important;
+}
+.timeline-item:hover .timeline-icon {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+@media (max-width: 768px) {
+  .timeline-item {
+      padding-left: 3rem;
+  }
+  
+  .timeline-icon {
+      width: 40px;
+      height: 40px;
+  }
+}
