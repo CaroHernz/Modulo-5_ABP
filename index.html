@@ -38,7 +38,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link hover-custom" href="#">
+              <a class="nav-link hover-custom" href="ABP3.html">
                 <i class="fas fa-book-open me-1"></i>ABP 3
               </a>
             </li>
@@ -153,8 +153,6 @@
   ];</code>
               </pre>
 
-
-              
               <div class="text-center">
                 <a href="ABP2.html">
                   <button class="btn btn-danger shadow-sm">Ir a Actividad 2</button>
@@ -163,29 +161,56 @@
             </div>
             <div class="abp3 collapse text-start" id="abp3" data-bs-parent="#accordion" aria-labelledby="abp3">
               <h3 class="text-start">Actividad Práctica 3</h3>
-              <p class="text-justify">
+              <p class="text-justify">Comprender y aplicar <strong><em>funciones callback</em></strong> en JavaScript para controlar el flujo de un programa de manera asíncrona o personalizada.
               </p>
-              <p class="fw-light">
-                <span class="fw-bold">Aprendizaje Esperado: </span>
-              </p>
+              <p><strong>🎯 Objetivo del Proyecto:</strong></p>
+              <ul>
+                  <li><strong>Comprender Callbacks:</strong> Demostrar el uso de callbacks en 3 partes: la llamada, la ejecución de la función principal y la ejecución final del callback.</li>
+                  <li><strong>Manipulación de Datos:</strong> Utilizar callbacks para realizar operaciones matemáticas (resta y potencia) y mostrar los resultados de forma dinámica.</li>
+                  <li><strong>Adaptabilidad del código:</strong> Modificar una función existente para que las frases de salida (en un `console.log`) se adapten automáticamente a los valores de entrada, en lugar de ser estáticas.</li>
+              </ul>
+
+              <h5><strong>Problema 1:</strong> Crear una Función Callback</h5>
+              <ol>
+                  <li><strong>Función Principal:</strong> la función imprime "Buenos días" y luego llama a su función callback</li>
+                  <li><strong>Función Callback:</strong> esta función es pasada como parámetro y que, al ser llamada, imprime la pregunta "¿quieres un café?".</li>
+              </ol>
+
+              <h5><strong>Problema 2:</strong> Modificar una función <em>`operaciones`</em> con Callbacks</h5>
+              <ol>
+                  <li><strong>Función Principal (`<em>operaciones</em>`):</strong> recibe 4 parámetros: 2 números (`a` y `b`) y 2 callback (`minora` y `potencias`)</li>
+                  <li><strong>Cálculos:</strong> dentro de la función se debe calcular la diferencia entre `a` y `b`, y la potencia de `a` elevado a `b`</li>
+                  <li><strong>Invocación de Callbacks:</strong> se debe llamar a `minora` con el resultado de la diferencia y a `potencias` con el resultado de la potencia</li>
+                  <li><strong>Modificación del código:</strong> se requiere que las funciones anónimas de callback sean modificadas para que el texto impreso en la consola sea dinámico. En lugar de imprimir "La diferencia es: 2", debe imprimir "La diferencia entre 5 y 3 es: 2", adaptándose si los números 5 y 3 cambian. Lo mismo aplica para la potencia.</li>
+              </ol>
+
+              <p>Función `operaciones`:</p>
+              <pre class="bg-light">
+              <code>
+  function operaciones(a,b,minora,potencias){
+    var diferencia = a-b;
+    var elevado=Math.pow(a,b);
+    minora(diferencia);         //invocamos la 1ª función anónima
+    potencias(elevado);         //invocamos la 2ª función anónima
+  }
+
+  operaciones(5,3,
+    function(diferencia){
+      console.log("La diferencia es: ",diferencia);
+    },
+    function(elevado){
+      console.log("Elevando se obtiene: ",elevado);
+    }
+  )</code>
+            </pre>
+
               <div class="text-center">
-                <a href="ABP3.html">
-                  <button class="btn btn-danger shadow-sm">Ir a Actividad 3</button>
-                </a>
+                  <a href="ABP3.html">
+                      <button class="btn btn-danger shadow-sm">Ir a Actividad 3</button>
+                  </a>
               </div>
-            </div>
           </div>
-
-
-
-
-
-
-
-
         </div>
-
-
       </div>
 
     </div>

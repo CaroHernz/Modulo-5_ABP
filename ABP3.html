@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABP2 | Módulo 5</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="assets/img/js-icon.png" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body class="bg-primary">
+    <header>
+        <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top shadow">
+            <div class="container-fluid ">
+                <a class="navbar-brand d-flex align-items-center text-primary" href="index.html">
+                    <i class="fa-brands fa-js me-2 fa-lg"></i> Módulo 5
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link hover-custom" aria-current="page" href="ABP1.html">
+                                <i class="fa-solid fa-book-open me-1"></i>ABP 1
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link hover-custom" href="ABP2.html">
+                                <i class="fas fa-book-open me-1"></i>ABP 2
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active active-custom" href="ABP3.html">
+                                <i class="fas fa-book-open me-1"></i>ABP 3
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container-fluid my-5">
+            <div class="bg-white bg-opacity-100 p-5 rounded mx-5 shadow-sm">
+                <h1 class="text-center mb-4">
+                    <div class="fw-light fst-italic text-secondary">Callback en JavaScript</div>
+                </h1>
+                <div>
+                    <h5><strong>Problema 1:</strong> Crear una Función Callback</h5>
+                    <ol>
+                        <li><strong>Función Principal:</strong> la función imprime "Buenos días" y luego llama a su función callback</li>
+                        <li><strong>Función Callback:</strong> esta función es pasada como parámetro y que, al ser llamada, imprime la pregunta "¿quieres un café?".</li>
+                    </ol>
+                    <div class="text-center"><button id="btnProblema1" type="button" class="btn btn-danger" onclick="problema1()">Saludar</button></div>
+                    <div id="resultadoProblema1" class="text-center bg-secondary bg-opacity-25 rounded mt-3 mb-5 p-2">
+                    </div>
+                </div>
+                <div>
+                    <h5><strong>Problema 2:</strong> Modificar una función <em>`operaciones`</em> con Callbacks</h5>
+                    <div class="row text-center mt-3">
+                        <div class="form-group col-6">
+                            <label for="numero1">1er Nº:</label>
+                            <input id="numero1" class="form-control" type="number" value="5">
+                        </div>
+                        <div class="col-6 form-group">
+                            <label for="numero2">2do Nº:</label>
+                            <input id="numero2" class="form-control" type="number" value="3">
+                        </div>
+                        <div class="text-center mt-3"><button id="btnProblema2" type="button" class="btn btn-danger" onclick="calcularOperaciones()">Calcular</button></div>
+                    </div>
+                    <div id="resultadoProblema2" class="text-center bg-secondary bg-opacity-25 rounded mt-3 mb-5 p-2"></div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-light py-3 shadow-sm m-3 rounded">
+        <div class="container-fluid">
+            <div class="row align-items-center mx-3">
+                <div class="col-6 text-start">
+                    <p class="fst-italic mb-0 text-primary">Carolina Hernández Barra</p>
+                </div>
+                <div class="sociales col-6 text-end">
+                    <a href="https://www.instagram.com/korolahernz/" class="text-primary me-3" target="_blank"><i
+                            class="fab fa-instagram fa-lg"></i></a>
+                    <a href="https://github.com/CaroHernz/" class="text-primary me-3" target="_blank"><i
+                            class="fa-brands fa-github fa-lg"></i></a>
+                    <a href="https://www.linkedin.com/in/carolinahernandezbarra/" class="text-primary"
+                        target="_blank"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/abp3.js"></script>
+</body>
+
+</html>
