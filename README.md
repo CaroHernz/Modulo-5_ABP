@@ -92,7 +92,54 @@ const entregas = [
 
 <a name="actividad3">
 
-## Actividad 3: </a>
+## Actividad 3: JavaScript Asíncrono </a>
+
+**Aprendizaje Esperado:** Reconocer los elementos fundamentales del Domain Object Model y los mecanismos para la manipulación de elementos en un documento html
+
+**Actividad:** Comprender y aplicar ***funciones callback** en JavaScript para controlar el flujo de un programa de manera asíncrona o personalizada.
+
+#### 🎯 Objetivo del Proyecto:
+
+* **Comprender Callbacks:** Demostrar el uso de callbacks en 3 partes: la llamada, la ejecución de la función principal y la ejecución final del callback.
+* **Manipulación de Datos:** Utilizar callbacks para realizar operaciones matemáticas (`resta` y `potencia`) y mostrar los resultados de forma dinámica.
+* **Adaptabilidad del código:** Modificar una función existente para que las frases de salida (en un `console.log`) se adapten automáticamente a los valores de entrada, en lugar de ser estáticas.
+
+**Problema 1:** Crear una Función Callback Básica
+
+1. **Función Principal:** la función imprime "Buenos días" y luego llama a su función callback
+2. **Función Callback:** esta función es pasada como parámetro y que, al ser llamada, imprime la pregunta "¿quieres un café?".
+
+**Problema 2:** Modificar una función `operaciones` con Callbacks
+
+1. **Función Principal (`operaciones`):** recibe 4 parámetros: 2 números (`a` y `b`) y 2 callback (`minora` y `potencias`)
+2. **Cálculos:** dentro de la función se debe calcular la diferencia entre `a` y `b`, y la potencia de `a` elevado a `b`
+3. **Invocación de Callbacks:** se debe llamar a `minora` con el resultado de la diferencia y a `potencias` con el resultado de la potencia
+4. **Modificación del código:** se requiere que las funciones anónimas de callback sean modificadas para que el texto impreso en la consola sea dinámico. En lugar de imprimir `La diferencia es: 2`, debe imprimir `La diferencia entre 5 y 3 es: 2`, adaptándose si los números 5 y 3 cambian. Lo mismo aplica para la potencia.
+
+#### Función `operaciones`:
+
+````
+  function operaciones(a,b,minora,potencias){
+    var diferencia = a-b;
+    var elevado=Math.pow(a,b);
+    minora(diferencia);         //invocamos la 1ª función anónima
+    potencias(elevado);         //invocamos la 2ª función anónima
+  }
+
+  operaciones(5,3,
+    function(diferencia){
+        console.log("La diferencia es: ",diferencia);
+    },
+    function(elevado){
+        console.log("Elevando se obtiene: ",elevado);
+    }
+  )
+````
+
+
+<p align="center"> 
+  <a href="https://carohernz.github.io/Modulo-5_ABP/ABP3.html">Ver Actividad Práctica 3</a>
+</p>
 
 ----
 
