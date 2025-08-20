@@ -4,7 +4,8 @@
 <p align="center"> 
   <a href="#actividad1">Actividad 1</a> | 
 	<a href="#actividad2">Actividad 2</a> | 
-	<a href="#actividad3">Actividad 3</a> 
+	<a href="#actividad3">Actividad 3</a> |
+	<a href="#actividad4">Actividad 4</a> 
 </p>
 
 -----
@@ -139,6 +140,26 @@ const entregas = [
 
 <p align="center"> 
   <a href="https://carohernz.github.io/Modulo-5_ABP/ABP3.html">Ver Actividad Práctica 3</a>
+</p>
+
+----
+
+<a name="actividad4">
+
+## Actividad Práctica 4: Consumo de API con JavaScript</a>
+
+**Aprendizaje Esperado:** Utilizar el objeto XHR y la API Fetch para el consumo de una API externa y su procesamiento acorde al lenguaje Javascript.
+
+**Problema:** Desarrollar un sitio web que permita conocer los feriados de Chile para el año atual. La API que se consumirá para este propósito es: `https://www.feriadosapp.com/api/holidays.json`
+
+#### ⚒️ Requerimientos:
+
+1. Cargar jQuery en el proyecto y armar una estructura básica en html
+2. Crear un código para consumir la API
+3. Utilizar JSON de respuesta y mostrar los datos en una tabla de HTML
+
+<p align="center"> 
+  <a href="https://carohernz.github.io/Modulo-5_ABP/ABP4.html">Ver Actividad Práctica 4</a>
 </p>
 
 ----
