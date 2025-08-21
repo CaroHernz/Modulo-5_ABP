@@ -221,14 +221,27 @@
           </div>
           <div class="abp4 collapse text-start" id="abp4" data-bs-parent="#accordion" aria-labelledby="abp4">
             <h3 class="text-start">Actividad Práctica 4</h3>
-            <p class="text-justify">Desarrollar un sitio web que permita conocer los feriados de Chile para el año atual. La API que se consumirá para este propósito es: https://www.feriadosapp.com/api/holidays.json
+            <p class="text-justify">Desarrollar una aplicación web que muestre información básica de un usuario (nombre, correo y ciudad), la cuál no debe estar disponible inmediatamente, sino que debe <em>"consultarse"</em> a un servidor externo.
             </p>
             <p>⚒️ Requerimientos:</p>
-            <ol>
-              <li>Cargar jQuery en el proyecto y armar una estructura básica en html</li>
-              <li>Crear un código para consumir la API</li>
-              <li>Utilizar JSON de respuesta y mostrar los datos en una tabla de HTML</li>
-            </ol>
+            <ul>
+              <li><strong>Uso de Callbacks</strong></li>
+              <ol>
+                <li>Función `obtenerUsuarioCallback(callback)` que después de 2 segundos retorne un objeto con los datos del usuario</li>
+                <li>Usar el callback para imprimir en consola el nombre y correo del usuario</li>
+              </ol>
+              <li><strong>Uso de Promesas</strong></li>
+              <ol>
+                <li>Función `obtenerUsuarioPromesa()` que retorne una `Promise` y, que tras 2 segundos, resuelva con los mismos datos del usuario</li>
+                <li>Consumir esa promesa con `.then()` y `.catch` mostrando el nombre y ciudad del usuario en consola</li>
+              </ol>
+              <li><strong>Uso de Async/Await</strong></li>
+              <ol>
+                <li>Función `obtenerUsuarioAsync()` que es async y utiliza la promesa anterior</li>
+                <li>Usa `await` para esperar el resultado y muestra en consola un mensaje con todos los datos del usuario</li>
+              </ol>
+            </ul>
+            
             <div class="text-center">
               <a href="ABP4.html">
                 <button class="btn btn-danger shadow-sm">Ir a Actividad 4</button>

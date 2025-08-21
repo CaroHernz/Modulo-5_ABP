@@ -146,17 +146,26 @@ const entregas = [
 
 <a name="actividad4">
 
-## Actividad Práctica 4: Consumo de API con JavaScript</a>
+## Actividad Práctica 4: JavaScript Asíncrono</a>
 
-**Aprendizaje Esperado:** Utilizar el objeto XHR y la API Fetch para el consumo de una API externa y su procesamiento acorde al lenguaje Javascript.
+**Aprendizaje Esperado:** Utilizar elementos de programación asíncrona para resolver un problema simple distinguiendo los diversos mecanismos para su implementación acorde al lenguaje JavaScript.
 
-**Problema:** Desarrollar un sitio web que permita conocer los feriados de Chile para el año atual. La API que se consumirá para este propósito es: `https://www.feriadosapp.com/api/holidays.json`
+**Problema:** Desarrollar una aplicación web que muestre información básica de un usuario (nombre, correo y ciudad), la cuál no debe estar disponible inmediatamente, sino que debe <em>"consultarse"</em> a un servidor externo.
 
 #### ⚒️ Requerimientos:
 
-1. Cargar jQuery en el proyecto y armar una estructura básica en html
-2. Crear un código para consumir la API
-3. Utilizar JSON de respuesta y mostrar los datos en una tabla de HTML
+**Uso de Callbacks**
+1. Función `obtenerUsuarioCallback(callback)` que después de 2 segundos retorne un objeto con los datos del usuario
+2. Usar el callback para imprimir en consola el nombre y correo del usuario
+
+**Uso de Promesas**
+1. Función `obtenerUsuarioPromesa()` que retorne una `Promise` y, que tras 2 segundos, resuelva con los mismos datos del usuario
+2. Consumir esa promesa con `.then()` y `.catch` mostrando el nombre y ciudad del usuario en consola
+
+**Uso de Async/Await**
+1. Función `obtenerUsuarioAsync()` que es async y utiliza la promesa anterior
+2. Usa `await` para esperar el resultado y muestra en consola un mensaje con todos los datos del usuario
+
 
 <p align="center"> 
   <a href="https://carohernz.github.io/Modulo-5_ABP/ABP4.html">Ver Actividad Práctica 4</a>

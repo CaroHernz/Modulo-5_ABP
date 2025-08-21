@@ -16,52 +16,89 @@
     <header>
         <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top shadow">
             <div class="container-fluid ">
-              <a class="navbar-brand d-flex align-items-center text-primary" href="index.html">
-                <i class="fa-brands fa-js me-2 fa-lg"></i> Módulo 5
-              </a>
-              
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                  <li class="nav-item">
-                    <a class="nav-link hover-custom" aria-current="page" href="ABP1.html">
-                      <i class="fa-solid fa-book-open me-1"></i>ABP 1
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link hover-custom" href="ABP2.html">
-                      <i class="fas fa-book-open me-1"></i>ABP 2
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link hover-custom" href="ABP3.html">
-                      <i class="fas fa-book-open me-1"></i>ABP 3
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active active-custom" aria-current="page" href="ABP4.html">
-                      <i class="fa-solid fa-book-open me-1"></i>ABP 4
-                    </a>
-                  </li>
-                </ul>
-              </div>
+                <a class="navbar-brand d-flex align-items-center text-primary" href="index.html">
+                    <i class="fa-brands fa-js me-2 fa-lg"></i> Módulo 5
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link hover-custom" aria-current="page" href="ABP1.html">
+                                <i class="fa-solid fa-book-open me-1"></i>ABP 1
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link hover-custom" href="ABP2.html">
+                                <i class="fas fa-book-open me-1"></i>ABP 2
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link hover-custom" href="ABP3.html">
+                                <i class="fas fa-book-open me-1"></i>ABP 3
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active active-custom" aria-current="page" href="ABP4.html">
+                                <i class="fa-solid fa-book-open me-1"></i>ABP 4
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-          </nav>
+        </nav>
     </header>
     <main>
         <div class="container-fluid my-5">
             <div class="bg-light bg-opacity-75 p-5 rounded mx-5 shadow-sm">
                 <h1 class="text-center mb-4">
-                    <div class="fst-italic text-dark"><i class="fa-solid fa-calendar-days me-3"></i>Feriados de Chile</div> 
-                    <div id="anioActual" class="fw-bold display-1"></div>
+                    <div class="text-dark"><i class="fa-solid fa-edit me-3"></i>Información del Usuario</div>
                 </h1>
-            <div id="feriados-container">
-                <h3 class="text-center text-secondary fst-italic fw-light mt-5">Seleccione </h3>
-            </div>   
-            </div> 
+                <hr>
+                <div class="row text-center mb-4">
+                    <div class="col-md-4">
+                        <button class="btn btn-outline-danger btn-lg w-100" onclick="ejecutarCallback()">
+                            <i class="fa-solid fa-rotate-right me-2"></i>Callback
+                        </button>
+                    </div>
+                    <div class="col-md-4">
+                        <button class="btn btn-outline-danger btn-lg w-100" onclick="ejecutarPromesa()">
+                            <i class="fa-solid fa-rotate-right me-2"></i>Promesa
+                        </button>
+                    </div>
+                    <div class="col-md-4">
+                        <button class="btn btn-outline-danger btn-lg w-100" onclick="ejecutarAsyncAwait()">
+                            <i class="fa-solid fa-rotate-right me-2"></i>Async/Await
+                        </button>
+                    </div>
+                </div>
+                <hr>
+                <div id="resultado">
+                    <div class="alert alert-light text-center">
+                        <i class="fa-solid fa-circle-info me-2"></i>
+                        Presiona un botón para obtener los datos del usuario...
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <div class="card visually-hidden" id="cardUsuario">
+                            <div class="card-header bg-primary text-white">
+                                <i class="fa-solid fa-user me-2"></i>Información del Usuario
+                            </div>
+                            <div class="card-body">
+                                <div id="userInfo">
+                                    <p class="text-center text-muted">Los datos aparecerán aquí</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
     <footer class="bg-light py-3 shadow-sm m-3 rounded">
@@ -71,9 +108,12 @@
                     <p class="fst-italic mb-0 text-primary">Carolina Hernández Barra</p>
                 </div>
                 <div class="sociales col-6 text-end">
-                    <a href="https://www.instagram.com/korolahernz/" class="text-primary me-3" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
-                    <a href="https://github.com/CaroHernz/" class="text-primary me-3"target="_blank"><i class="fa-brands fa-github fa-lg"></i></a>
-                    <a href="https://www.linkedin.com/in/carolinahernandezbarra/" class="text-primary"target="_blank"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                    <a href="https://www.instagram.com/korolahernz/" class="text-primary me-3" target="_blank"><i
+                            class="fab fa-instagram fa-lg"></i></a>
+                    <a href="https://github.com/CaroHernz/" class="text-primary me-3" target="_blank"><i
+                            class="fa-brands fa-github fa-lg"></i></a>
+                    <a href="https://www.linkedin.com/in/carolinahernandezbarra/" class="text-primary"
+                        target="_blank"><i class="fab fa-linkedin-in fa-lg"></i></a>
                 </div>
             </div>
         </div>

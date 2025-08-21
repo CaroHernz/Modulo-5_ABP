@@ -1,119 +1,108 @@
-// Mostrar año actual:
-const anioActual = document.getElementById('anioActual');
-anioActual.textContent = new Date().getFullYear()
+//Datos:
+const datosUsuario={
+    nombre: "Ana Antilao",
+    correo: "anita.antilao@correo.cl",
+    ciudad: "Rancagua",
+    pais: "Chile"
+}
 
-//Fecha:
-function formatoFecha(fechaStr) {
-    const fecha = new Date(fechaStr + 'T00:00:00');
-    return fecha.toLocaleDateString('es-CL', {
-        weekday: 'long',
-        month: 'long',
-        day: 'numeric',
+//Callback
+function obtenerUsuarioCallback(callback){
+    console.log("Iniciando callback...");
+    setTimeout(()=> {
+        console.log("Callback cargado");
+        callback(null, datosUsuario);
+    }, 2000);
+}
+function ejecutarCallback() {
+    const infoUsuario = document.getElementById('userInfo');
+    const resultado = document.getElementById('resultado');
+    const card = document.getElementById('cardUsuario');
+
+    obtenerUsuarioCallback((error,usuario)=> {
+        if(usuario) {
+            console.log("Nombre: " + usuario.nombre)
+            console.log("Correo: " + usuario.correo);
+            card.classList.remove('visually-hidden')
+            resultado.innerHTML = '';
+            infoUsuario.innerHTML= `<p>
+            Nombre: ${usuario.nombre}</p>
+            <p>Correo: ${usuario.correo}
+            </p>`
+        }else{
+            console.log(error);
+            resultado.innerText = "Error al obtener datos del usuario";
+        }
     })
 }
-function proximoFeriado(feriados){
-    const hoy = new Date();
-    const hoyActual = new Date(hoy.getFullYear(),hoy.getMonth(), hoy.getDate())
-    const proximoFeriado = feriados.find(feriado => {
-        const fechaFeriado = new Date(feriado.date + 'T00:00:00');
-        return fechaFeriado >= hoyActual;
+//Promesa
+function obtenerUsuarioPromesa(){
+    console.log("Iniciando promesa...");
+    return new Promise((resolve, reject)=> {
+        setTimeout(()=> {
+            //Simula error:
+            if (Math.random() <0.1) {
+                console.log("error al cargar promesa...")
+                reject(new Error("Error al cargar promesa"))
+            } else{
+                console.log("Promesa resuelta")
+                resolve(datosUsuario);
+            }
+        }, 2000)
     })
+}
 
-    if(!proximoFeriado) {
-        return {dias:null, mensaje: "No hay más feriados este año"}
-    }
-    const fechaProximoFeriado = new Date(proximoFeriado.date +'T00:00:00');
-    const diferencia = fechaProximoFeriado-hoyActual;
-    const diasRestantes = Math.ceil(diferencia/(1000*60*60*24))
-    return {
-        dias: diasRestantes, feriado:proximoFeriado, fecha:fechaProximoFeriado
+function ejecutarPromesa(){
+    const infoUsuario = document.getElementById('userInfo');
+    const resultado = document.getElementById('resultado');
+    const card = document.getElementById('cardUsuario');
+
+    obtenerUsuarioPromesa()
+        .then(usuario => {
+            console.log("Nombre: " + usuario.nombre)
+            console.log("Ciudad: " + usuario.ciudad);
+            card.classList.remove('visually-hidden')
+            resultado.innerHTML = '';
+            infoUsuario.innerHTML= `<p>
+            Nombre: ${usuario.nombre}</p>
+            <p>Ciudad: ${usuario.ciudad}, ${usuario.pais}
+            </p>`
+        })
+        .catch(error => {
+            console.log("error en promesa", error.message);
+            resultado.innerText = "Error al obtener datos del usuario con promesa: " + error.message;
+        })
+}
+//Async/Await
+async function obtenerUsuarioAsync(){
+    console.log("Iniciando async/await...")
+    try {
+        const usuario = await obtenerUsuarioPromesa();
+        return usuario;
+    } catch(error){
+        throw error;
     }
 }
 
-function crearTablaFeriados(feriados) {
-    feriados.sort((a,b)=> new Date(a.date)-new Date(b.date));
-    anio =  new Date().getFullYear();
-    let tablaHTML = `
-    <div class="table-responsive">
-            <table class="table table-striped table-hover">
-                <thead class="table-dark">
-                    <tr>
-                        <th>Fecha</th>
-                        <th>Nombre</th>
-                        <th>Tipo</th>
-                        <th>Irrenunciable</th>
-                    </tr>
-                </thead>
-                <tbody>
-    `;
-    feriados.forEach(feriado => {
-        tablaHTML += `
-        <tr>
-                <td>${formatoFecha(feriado.date)}</td>
-                <td>${feriado.title}</td>
-                <td>${feriado.type}</td>
-                <td>${feriado.inalienable ? 'Sí' : 'No'}</td>
-        </tr>
-        `
-    });
-    tablaHTML += `
-                </tbody>
-            </table>
-        </div>
-        <h4 class="text-muted text-center mt-3">El Año ${anio} tiene en total <strong>${feriados.length}</strong> feriados</h4>
-    `;
-    const infoProximoFeriado = proximoFeriado(feriados);
-    tablaHTML += `<h3 class="text-muted text-center mt-3">Faltan <strong>${infoProximoFeriado.dias}</strong> días para el próximo feriado</h3>`
-    
-    return tablaHTML;
-}
-
-
-
-// API feriados:
-const feriadosContainer = document.getElementById('feriados-container');
-const options = {
-    method: 'GET', 
-    headers: {
-        accept: 'application/json',
-        'Content-Type': 'application/json'
+async function ejecutarAsyncAwait(){
+    const infoUsuario = document.getElementById('userInfo');
+    const resultado = document.getElementById('resultado');
+    const card = document.getElementById('cardUsuario');
+    try{
+        const usuario = await obtenerUsuarioAsync();
+        console.log("Nombre: " + usuario.nombre);
+        console.log("Correo: " + usuario.correo);
+        console.log("Ciudad: " + usuario.ciudad);
+        card.classList.remove('visually-hidden')
+        resultado.innerHTML = '';
+        infoUsuario.innerHTML= `<p>
+            Nombre: ${usuario.nombre}</p>
+            <p>Correo: ${usuario.correo}
+            </p>
+            <p>Ciudad: ${usuario.ciudad}
+            </p>`
+    } catch(error){
+        console.log("error en async/await", error.message);
+        resultado.innerText = "Error al obtener datos del usuario con async/await", error.message;
     }
-};
-
-function cargarFeriados() {
-    feriadosContainer.style.display = 'none';
-    fetch('https://api.boostr.cl/holidays.json', options)
-  .then(response => {
-    if(!response.ok) throw new Error(`Error HTTP: ${response.status}`)
-    return response.json()})
-  .then(data => {
-    console.log('Datos recibidos:', data)
-    if (data && data.data && Array.isArray(data.data)) {
-        const feriados = data.data;
-        if (feriados.length > 0) {
-            feriadosContainer.innerHTML = crearTablaFeriados(feriados);
-            feriadosContainer.style.display = 'block'
-        } else {
-            throw new Error('No se encontraron feriados')
-        }
-    } else {
-        throw new Error('Formato de respuesta inválido')
-    }
-  })
-  .catch(err => console.error(err));
 }
-
-// Cargar feriados cuando la página esté lista
-document.addEventListener('DOMContentLoaded', function() {
-    // Cargar feriados
-    cargarFeriados();
-    
-    // Opcional: Actualizar cada año automáticamente
-    setInterval(() => {
-        const newYear = new Date().getFullYear();
-        if (newYear !== parseInt(anioActualElement.textContent)) {
-            anioActualElement.textContent = newYear;
-            cargarFeriados();
-        }
-    }, 86400000); // Verificar cada día
-});
