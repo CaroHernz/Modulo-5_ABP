@@ -107,3 +107,17 @@
       height: 40px;
   }
 }
+
+
+.table-responsive {
+  max-height: 800px;
+  overflow-y: auto;
+}
+
+.table th {
+  position: sticky;
+  top: 0;
+  background-color: #343a40;
+  color: white;
+}
+
